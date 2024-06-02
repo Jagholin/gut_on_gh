@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Download godot
         run: |
-          wget https://github.com/godotengine/godot/releases/download/4.2.2-stable/Godot_v4.2.2-stable_win64.exe.zip
+          Invoke-WebRequest https://github.com/godotengine/godot/releases/download/4.2.2-stable/Godot_v4.2.2-stable_win64.exe.zip -OutFile Godot_v4.2.2-stable_win64.exe.zip
           unzip Godot_v4.2.2-stable_win64.exe.zip
           mv Godot_v4.2.2-stable_win64.exe godot.exe
       - name: Run tests
