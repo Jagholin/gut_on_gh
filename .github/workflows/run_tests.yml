@@ -12,6 +12,7 @@ jobs:
           unzip Godot_v4.2.2-stable_linux.x86_64.zip
           mv Godot_v4.2.2-stable_linux.x86_64 godot
       - name: generate .godot directory
+        continue-on-error: true
         run: ./godot --headless --export-debug
       - name: Run tests
         run: ./godot --headless -d -s --path . addons/gut/gut_cmdln.gd -gdir=res://test/unit -gexit
